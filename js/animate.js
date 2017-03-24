@@ -1,4 +1,5 @@
 var advantage_list = document.querySelectorAll(".advantage");
+var reason_text = document.querySelector(".reason__col");
 var THROTTLE_DELAY = 100;
 
 var isBottomReached = function() {
@@ -13,15 +14,20 @@ var isBottomFirstLineReached = function() {
 };
 
 
+var isBottomReasonReached = function() {
+    var reasonPosition = reason_text.getBoundingClientRect();
+    return reasonPosition.top - window.innerHeight + 400 <= 0;
+};
+
 var setScrollEnabled = function() {
-  var lastCall = Date.now();
-  console.log("1");
+    var lastCall = Date.now();
+
 
 
     window.addEventListener('scroll', function(evt) {
-        console.log("2");
-      if (Date.now() - lastCall >= THROTTLE_DELAY)   {
-        console.log("now");
+
+        if (Date.now() - lastCall >= THROTTLE_DELAY) {
+
 
             if (isBottomReached()) {
 
@@ -41,9 +47,18 @@ var setScrollEnabled = function() {
                 advantage_list[5].classList.add("animated");
                 advantage_list[5].classList.add("bounceInRight");
             }
+
+            if (isBottomReasonReached()) {
+
+                reason_text.classList.add("animated");
+                reason_text.classList.add("bounceInRight");
+
+            }
             lastCall = Date.now();
-              }
-          });
+
+
+        }
+    });
 
 };
 

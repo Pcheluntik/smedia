@@ -7,14 +7,14 @@
     color: #{$colorRegularFont};
     font-size: #{$fontRegularSize};
 }
-@mixin boldText($fontBoldSize: 1.25rem, $colorBoldFont: #4F4D4E) {
+@mixin boldText($fontBoldSize: 1rem, $colorBoldFont: #4F4D4E) {
     font-family: "Lato Bold", "Arial", sans-serif;
     font-weight: bold;
     font-size: #{$fontBoldSize};
     color: #{$colorBoldFont};
     line-height: $fontBoldSize + 0.3rem;
 }
-@mixin lightText($fontLightSize: 1.25rem, $colorLightFont: #4F4D4E) {
+@mixin lightText($fontLightSize: 1rem, $colorLightFont: #4F4D4E) {
     font-family: "Lato Light", "Arial", sans-serif;
     font-weight: 300;
     font-size: #{$fontLightSize};
@@ -122,7 +122,6 @@ border-bottom: solid red;*/
     @include make-xs-column(3);
     text-align: center;
     vertical-align: middle;
-    min-width: 200px;
 }
 
 .navigation-menu {
@@ -135,7 +134,8 @@ border-bottom: solid red;*/
         width: 90%;
         @extend .center-block;
         @include flex-row();
-        justify-content: space-around;
+        justify-content: space-between;
+        @include lightText($fontLightSize: 1rem);
 
         li {
             padding: 5% 5px;
@@ -155,6 +155,10 @@ border-bottom: solid red;*/
                 width: 0;
                 left: 5px;
             }
+
+            &:first-of-type {
+                padding-left: 0;
+            }
         }
 
         li:hover::after {
@@ -168,7 +172,7 @@ border-bottom: solid red;*/
 .contacts {
     @include make-xs-column(3);
     margin-top: 10px;
-    min-width: 300px;
+    min-width: 210px;
 
     .contacts_col {
         float: left;
@@ -178,7 +182,7 @@ border-bottom: solid red;*/
         color: #4F4D4E;
         margin-top: 10px;
         display: block;
-        min-width: 180px;
+        min-width: 140px;
         @include boldText();
         text-decoration: none;
 
@@ -192,11 +196,17 @@ border-bottom: solid red;*/
         display: block;
         margin-top: 5%;
         text-align: right;
+        float: right;
         width: 40px;
         height: 40px;
         border-radius: 50%;
         border: 1px solid #4CACC2;
-        border-right: none;
+        border-right-width: 0;
+        transition:
+        border-right-width 0.1s,
+        border-bottom-width 0.1s 0.1s,
+        border-left-width 0.1s 0.2s,
+        border-top-width 0.1s 0.3s;
 
         a {
             min-width: 40px;
@@ -204,6 +214,14 @@ border-bottom: solid red;*/
             line-height: 40px;
             text-decoration: none;
             margin: 0;
+        }
+
+        &:hover {
+          border-right-width: 1px;
+          border-color:  #295D66;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+          border-top-width: 0px;
         }
     }
 }
@@ -396,7 +414,7 @@ border-bottom: solid red;*/
     }
 }
 /*-------------------------------------------
-#########         Service page        ##########
+#########         Reason page        ##########
 ---------------------------------------------*/
 .reason {
     @include lightText($fontLightSize: 1.25rem);
@@ -408,12 +426,14 @@ border-bottom: solid red;*/
     margin-top: 30px;
 
     &__col {
-        @include make-xs-column(12);
+        @include make-xs-column(6);
+        @include make-xs-column-offset(6);
         @include make-sm-column(5);
         @include make-sm-column-offset(7);
         padding-top: 50px;
         @extend .clearfix;
         padding-bottom: 20px;
+
     }
 }
 /*-------------------------------------------
@@ -472,6 +492,7 @@ border-bottom: solid red;*/
                 border: 2px solid #4CACC2;
                 min-width: 200px;
                 max-width: 400px;
+                    margin: 0 auto;
 
                 &_title {
                     @include boldText($fontBoldSize: 0.75rem);
@@ -491,15 +512,12 @@ border-bottom: solid red;*/
     }
 }
 
-.notVisible {
-    display: none;
-}
-
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+    display: block;
 }
 @keyframes bounceInLeft {
     60%,
@@ -665,7 +683,6 @@ border-bottom: solid red;*/
 ---------------------------------------------*/
 .works_previews {
     height: 100%;
-  
     transition: height 5s;
 
     ul {
@@ -792,6 +809,10 @@ border-bottom: solid red;*/
     }
 }
 
+.view_all {
+    display: none;
+}
+
 .works_btn {
     text-transform: uppercase;
     margin: 0 auto;
@@ -852,11 +873,11 @@ border-bottom: solid red;*/
     }
 
     .social {
-        margin-top: 30px;
         @include make-sm-column(4);
         @include make-xs-column(12);
-@extend .clearfix;
-min-width: 320px;
+        @extend .clearfix;
+        min-width: 320px;
+
         ul {
             padding: 0;
             list-style: none;
@@ -873,7 +894,20 @@ min-width: 320px;
                 border: 2px solid #fff;
                 background-repeat: no-repeat;
                 background-position: center;
-                border-right: none;
+                border-right-width: 0;
+                transition:
+                border-right-width 0.1s,
+                border-bottom-width 0.1s 0.1s,
+                border-left-width 0.1s 0.2s,
+                border-top-width 0.1s 0.3s;
+
+                &:hover {
+                  border-right-width: 1px;
+                  border-color:  cyan;
+                  border-bottom-width: 0px;
+                  border-left-width: 0px;
+                  border-top-width: 0px;
+                }
             }
 
             .social-btn__vk {
@@ -889,6 +923,43 @@ min-width: 320px;
             }
         }
     }
+}
+@media (max-width: 1000px) and (min-width: 768px) {
+    .works_previews ul li .btn {
+        left: 8%;
+    }
+
+    .footer {
+        padding-top: 20px;
+        padding-bottom: 0;
+
+        p {
+            text-align: center;
+        }
+
+        .contacts {
+          padding-top: 20px;
+            float: none;
+            margin: 0 auto;
+        }
+
+        .social {
+          padding-top: 20px;
+            float: none;
+            margin: 0 auto;
+        }
+    }
+   .head {
+    .navigation-menu {
+      width: 72%;
+      ul  {
+        margin-top: 30px;
+      }
+    }
+    .contacts {
+      margin-top: -5%;
+    }
+  }
 }
 @media (max-width: 840px) {
     .footer {
@@ -906,6 +977,7 @@ min-width: 320px;
         }
 
         .social {
+            float: none;
             margin: 0 auto;
 
             ul {
@@ -915,6 +987,37 @@ min-width: 320px;
     }
 }
 @media (max-width: 767px) {
+  .head {
+   display: none;
+   opacity: 0;
+   transition: 0.25s;
+   width: 320px;
+
+ }
+ .menu-btn {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   display: block;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   background-color: #fff;
+   &:hover {
+     & + .head {
+       display: flex;
+       opacity: 1;
+       position: absolute;
+       left: 60px;
+       background-color: #fff;
+       z-index: 5;
+       border-radius: 20px;
+
+     }
+
+   }
+ }
+
     .service-grid {
         min-width: 320px;
 
@@ -938,6 +1041,29 @@ min-width: 320px;
                 }
             }
         }
+    }
+
+    .footer {
+        padding-top: 20px;
+
+        p {
+            text-align: center;
+        }
+
+        .contacts {
+            float: none;
+            margin: 0 auto;
+        }
+
+        .social {
+            float: none;
+            margin: 0 auto;
+        }
+    }
+
+    .works_previews ul li {
+        float: none;
+        margin: 0 auto;
     }
 }
 @media (min-width: 767px) {
@@ -963,4 +1089,6 @@ min-width: 320px;
             }
         }
     }
+
+
 }
