@@ -666,7 +666,19 @@ border-bottom: solid red;*/
                 height: 100%;
                 z-index: 2;
                 position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(55, 65, 69, 0.3);
+                    z-index: 2;
+                    top: 0;
+                    left: 0;
+                }
             }
+
+
 
             .works_previews__active {
                 z-index: 3;
@@ -676,6 +688,7 @@ border-bottom: solid red;*/
                 top: 5%;
                 left: 5%;
                 transition: border 1s 1s;
+
 
                 &::before {
                     content: "";
@@ -706,6 +719,7 @@ border-bottom: solid red;*/
                 position: absolute;
                 margin: 0 auto;
                 left: 25%;
+                min-width:150px;
 
                 a {
                     color: #fff;
@@ -713,13 +727,23 @@ border-bottom: solid red;*/
                 }
             }
 
-            p {
-                visibility: hidden;
+            .works_previews-text {
+                @include boldText($colorBoldFont: #fff);
+                text-shadow: grey;
                 position: absolute;
                 display: inline-block;
-                top: 30%;
+                top: 20%;
                 margin: 0 auto;
                 text-align: center;
+                width: 80%;
+                left: 10%;
+                max-height: 155px;
+            }
+
+            p:not(:first-of-type) {
+              margin-top: 20px;
+              font-size: 1.5rem;
+              bottom: 0;
             }
         }
 
@@ -749,24 +773,12 @@ border-bottom: solid red;*/
                         bottom: 10px;
                     }
 
-                    p {
-                        visibility: visible;
-                        position: absolute;
-                        display: inline-block;
-                        bottom: 40px;
-                    }
+
+                }
+                &::before {
+                    background-color: rgba(55, 65, 69, 0.7);
                 }
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(55, 65, 69, 0.3);
-                    z-index: 2;
-                    top: 0;
-                    left: 0;
-                }
             }
         }
     }
