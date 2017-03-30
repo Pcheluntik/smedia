@@ -15,8 +15,7 @@
 <body>
 
     <header>
-      <div class="menu-btn">
-      </div>
+
         <!--Шапка сайта-->
         <div class="container-fluid head">
 
@@ -25,6 +24,11 @@
                 <a href=""><img src="img/logo.png" alt="StarMedia" width="200" height="60"></a>
             </div>
 
+            <div class="menu-btn close-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
             <!--Навигационное меню-->
             <nav class="navigation-menu">
                 <ul>
@@ -51,17 +55,8 @@
 
             <!--Контакты-->
             <div class="contacts">
-                <div class="contacts_col">
                     <a href="tel:+375297066767">+375 29 <span>706 67 67</span></a>
                     <a href="tel:+375297066767">+375 29 <span>706 67 67</span></a>
-
-
-                </div>
-
-                <!--Смена языка-->
-                <div class="language contacts_col">
-                    <a href="">ru</a>
-                </div>
             </div>
     </header>
 
@@ -495,6 +490,8 @@
 
 
     <script src="js/works.js"></script>
+      <script src="js/close_menu.js"></script>
+
     <script>
         if (window.screen.width > 800) {
             document.write('<script src="js/animate.js"><\/script>');

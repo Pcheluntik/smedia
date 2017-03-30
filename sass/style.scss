@@ -173,10 +173,7 @@ border-bottom: solid red;*/
     @include make-xs-column(3);
     margin-top: 10px;
     min-width: 210px;
-
-    .contacts_col {
-        float: left;
-    }
+    text-align: center;
 
     a {
         color: #4F4D4E;
@@ -188,40 +185,6 @@ border-bottom: solid red;*/
 
         span {
             @include lightText();
-        }
-    }
-
-    .language {
-        text-transform: uppercase;
-        display: block;
-        margin-top: 5%;
-        text-align: right;
-        float: right;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 1px solid #4CACC2;
-        border-right-width: 0;
-        transition:
-        border-right-width 0.1s,
-        border-bottom-width 0.1s 0.1s,
-        border-left-width 0.1s 0.2s,
-        border-top-width 0.1s 0.3s;
-
-        a {
-            min-width: 40px;
-            text-align: center;
-            line-height: 40px;
-            text-decoration: none;
-            margin: 0;
-        }
-
-        &:hover {
-          border-right-width: 1px;
-          border-color:  #295D66;
-          border-bottom-width: 0px;
-          border-left-width: 0px;
-          border-top-width: 0px;
         }
     }
 }
@@ -426,14 +389,13 @@ border-bottom: solid red;*/
     margin-top: 30px;
 
     &__col {
-        @include make-xs-column(6);
-        @include make-xs-column-offset(6);
+        @include make-xs-column(12);
+
         @include make-sm-column(5);
         @include make-sm-column-offset(7);
         padding-top: 50px;
         @extend .clearfix;
         padding-bottom: 20px;
-
     }
 }
 /*-------------------------------------------
@@ -492,7 +454,7 @@ border-bottom: solid red;*/
                 border: 2px solid #4CACC2;
                 min-width: 200px;
                 max-width: 400px;
-                    margin: 0 auto;
+                margin: 0 auto;
 
                 &_title {
                     @include boldText($fontBoldSize: 0.75rem);
@@ -653,6 +615,7 @@ border-bottom: solid red;*/
         @include make-xs-column(12);
         @include make-sm-column(5);
         @include make-sm-column-offset(1);
+        margin-bottom: 20px;
     }
 
     ul {
@@ -895,18 +858,14 @@ border-bottom: solid red;*/
                 background-repeat: no-repeat;
                 background-position: center;
                 border-right-width: 0;
-                transition:
-                border-right-width 0.1s,
-                border-bottom-width 0.1s 0.1s,
-                border-left-width 0.1s 0.2s,
-                border-top-width 0.1s 0.3s;
+                transition: border-right-width 0.1s, border-bottom-width 0.1s 0.1s, border-left-width 0.1s 0.2s, border-top-width 0.1s 0.3s;
 
                 &:hover {
-                  border-right-width: 1px;
-                  border-color:  cyan;
-                  border-bottom-width: 0px;
-                  border-left-width: 0px;
-                  border-top-width: 0px;
+                    border-right-width: 1px;
+                    border-color: cyan;
+                    border-bottom-width: 0;
+                    border-left-width: 0;
+                    border-top-width: 0;
                 }
             }
 
@@ -938,28 +897,31 @@ border-bottom: solid red;*/
         }
 
         .contacts {
-          padding-top: 20px;
+            padding-top: 20px;
             float: none;
             margin: 0 auto;
         }
 
         .social {
-          padding-top: 20px;
+            padding-top: 20px;
             float: none;
             margin: 0 auto;
         }
     }
-   .head {
-    .navigation-menu {
-      width: 72%;
-      ul  {
-        margin-top: 30px;
-      }
+
+    .head {
+        .navigation-menu {
+            width: 72%;
+
+            ul {
+                margin-top: 30px;
+            }
+        }
+
+        .contacts {
+            margin-top: -5%;
+        }
     }
-    .contacts {
-      margin-top: -5%;
-    }
-  }
 }
 @media (max-width: 840px) {
     .footer {
@@ -987,36 +949,121 @@ border-bottom: solid red;*/
     }
 }
 @media (max-width: 767px) {
-  .head {
-   display: none;
-   opacity: 0;
-   transition: 0.25s;
-   width: 320px;
+    .navigation-menu {
+        display: none;
+        opacity: 0;
+        transition: 0.25s;
+    }
 
- }
- .menu-btn {
-   position: absolute;
-   top: 10px;
-   left: 10px;
-   display: block;
-   width: 50px;
-   height: 50px;
-   border-radius: 50%;
-   background-color: #fff;
-   &:hover {
-     & + .head {
-       display: flex;
-       opacity: 1;
-       position: absolute;
-       left: 60px;
-       background-color: #fff;
-       z-index: 5;
-       border-radius: 20px;
+    .logo {
+        width: 40%;
+        margin-top: 2%;
+        order: -2;
+    }
 
-     }
+    .contacts {
+        order: -1;
+        margin-top: 0;
+        padding: 0;
+        padding-bottom: 10px;
+        width: 40%;
+            min-width: 180px;
 
-   }
- }
+    }
+
+    .menu-btn {
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin-top: 10px;
+        border-radius: 50%;
+        background-image: radial-gradient(#e5edfc, #5772a5);
+        margin-left: 5%;
+
+        span {
+            display: block;
+            position: absolute;
+            height: 5px;
+            width: 28px;
+            margin-bottom: -2px;
+            left: 11px;
+            top: 10px;
+            background: #4F4D4E;
+            border-radius: 9px;
+            opacity: 1;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: 0.25s ease-in-out;
+            -moz-transition: 0.25s ease-in-out;
+            -o-transition: 0.25s ease-in-out;
+            transition: 0.25s ease-in-out;
+        }
+
+        span:nth-child(1) {
+            top: 11px;
+        }
+
+        span:nth-child(2) {
+            top: 23px;
+        }
+
+        span:nth-child(3) {
+            top: 35px;
+        }
+
+        &.active span:nth-child(1) {
+            top: 20px;
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
+
+        &.active span:nth-child(2) {
+            opacity: 0;
+            right: -60px;
+        }
+
+        &.active span:nth-child(3) {
+            top: 20px;
+            -webkit-transform: rotate(-135deg);
+            -moz-transform: rotate(-135deg);
+            -o-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+
+        &.active {
+            & + .navigation-menu {
+                display: block;
+                opacity: 1;
+                position: absolute;
+                right: 0;
+                top: 10%;
+                background-color: #fff;
+                z-index: 5;
+                border-radius: 20px;
+                padding: 10px;
+                box-shadow: 0 5px 5px 0 grey;
+                text-align: center;
+
+                & ul {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .menu-btn.close-menu:hover {
+      & + .navigation-menu {
+          display: none;
+          position: absolute;
+        }
+    }
+
 
     .service-grid {
         min-width: 320px;
@@ -1065,6 +1112,11 @@ border-bottom: solid red;*/
         float: none;
         margin: 0 auto;
     }
+
+    .reason {
+        background-image: radial-gradient(#e5edfc, #a7b8d6);
+        background-color: lightgrey;
+    }
 }
 @media (min-width: 767px) {
     .service-grid {
@@ -1089,6 +1141,45 @@ border-bottom: solid red;*/
             }
         }
     }
+}
 
+@media (max-width: 450px) {
+  .logo {
+   width: 80%;
+   margin: 0 auto;
+  }
+  .contacts {
+    margin-left: 12%;
+  }
+
+  .title  {
+    width: 100%;
+    h1 {
+    font-size: 2rem;
+    span {
+      font-size: 2rem;
+    }
+  }
+}
+  .menu-btn.active + .navigation-menu {
+    top: 21%;
+  }
+
+  .main-page p {
+    width: 100%;
+  }
+
+  .undertitle {
+    width: 100%;
+  }
+
+  .reason__col {
+    padding-top: 0;
+  }
+  .footer .social ul {
+
+    width: 300px;
+    margin: 0 auto;
+}
 
 }
