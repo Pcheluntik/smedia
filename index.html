@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>StarMedia</title>
+    <title>CompanyName</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="sass/style.scss">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 </head>
+<link rel="stylesheet" href="assets\stylesheets\_bootstrap.scss">
+<script src="assets\javascripts\bootstrap.min.js"></script>
+
+
 
 <body>
 
@@ -21,7 +25,7 @@
 
             <!--Логотип-->
             <div class="logo">
-                <a href=""><img src="img/logo.png" alt="StarMedia" width="200" height="60"></a>
+                <a href=""><img src="img/logo.jpg" alt="" width="200" height="60"></a>
             </div>
 
             <div class="menu-btn close-menu">
@@ -65,8 +69,84 @@
         <!--Главная страница-->
         <div class="container-fluid main-page">
 
+
+            <!--Slider-->
+
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/main.jpg" alt="">
+                        <div class="carousel-caption">
+                            <div class="title">
+                                <h1>Создание, продвижение и оптимизация <span>бизнеса</span></h1>
+                            </div>
+
+                            <p>мы предлагаем не просто сайты,<br>мы предлагаем готовые решения для бизнеса</p>
+
+                            <div class="main-btn btn">
+                                <a href="">оставить заявку</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/2.jpg" alt="...">
+                        <div class="carousel-caption">
+                            <div class="title">
+                                <h1>Создание, продвижение и оптимизация <span>бизнеса</span></h1>
+                            </div>
+
+                            <p>мы предлагаем не просто сайты,<br>мы предлагаем готовые решения для бизнеса</p>
+
+                            <div class="main-btn btn">
+                                <a href="">оставить заявку</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/2.jpg" alt="...">
+                        <div class="carousel-caption">
+                            <div class="title">
+                                <h1>Создание, продвижение и оптимизация <span>бизнеса</span></h1>
+                            </div>
+
+                            <p>мы предлагаем не просто сайты,<br>мы предлагаем готовые решения для бизнеса</p>
+
+                            <div class="main-btn btn">
+                                <a href="">оставить заявку</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+            <!--/Slider-->
+
+
+            <!--Video-->
+            <!--
+                <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
+
+              <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
+              <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+          </video>
+-->
+
+
+            <!--Если не слайдер, то раскоментировать-->
+            <!--
             <div class="title">
-                <h1>Создание, продвижение и оптимизация <span>веб-сайтов</span></h1>
+                <h1>Создание, продвижение и оптимизация <span>бизнеса</span></h1>
             </div>
 
             <p>мы предлагаем не просто сайты,<br>мы предлагаем готовые решения для бизнеса</p>
@@ -74,6 +154,14 @@
             <div class="main-btn btn">
                 <a href="">оставить заявку</a>
             </div>
+-->
+
+
+            <!--Video-->
+            <!--             <div class="btn pause">
+                <button id="pause-btn">Pause</button>
+            </div>
+-->
 
         </div>
 
@@ -89,7 +177,7 @@
                         <div>
                             <img src="img/icon1.png" alt="" width=50 height=50>
                             <div class="service-grid_item__active">
-                                <p>разработка дизайна</p>
+                                <p>дизайн помещений</p>
                             </div>
                         </div>
                     </li>
@@ -97,7 +185,7 @@
                         <div>
                             <img src="img/icon2.png" alt="" width=50 height=50>
                             <div class="service-grid_item__active">
-                                <p>контекстная реклама</p>
+                                <p>реклама на фасадах</p>
                             </div>
                         </div>
                     </li>
@@ -105,7 +193,7 @@
                         <div>
                             <img src="img/icon3.png" alt="" width=50 height=50>
                             <div class="service-grid_item__active">
-                                <p>аудиторская проверка</p>
+                                <p>перепродажа недвижимости</p>
                             </div>
                         </div>
                     </li>
@@ -121,7 +209,7 @@
                         <div>
                             <img src="img/icon5.png" alt="" width=50 height=50>
                             <div class="service-grid_item__active">
-                                <p>контекстная реклама</p>
+                                <p>техническое обслуживание</p>
                             </div>
                         </div>
                     </li>
@@ -129,7 +217,7 @@
                         <div>
                             <img src="img/icon6.png" alt="" width=50 height=50>
                             <div class="service-grid_item__active">
-                                <p>контекстная реклама</p>
+                                <p>погрузка мебели</p>
                             </div>
                         </div>
                     </li>
@@ -301,7 +389,7 @@
         <div class="container-fluid">
             <div class="about">
                 <div class="about_col">
-                    <h2><span>Стармедиа</span> - агентство, которое думает за вас</h2>
+                    <h2><span>CompanyName</span> - компания, которая думает за вас</h2>
                     <p>
                         Наши клиенты должны получать качественный продукт по реальный цене, а не с 300% накруткой за бренд или имя. Если мы беремся за работу, то выполняем ее на 100%, ориентируясь на два главных фактора, из которых складывается весь рабочий процесс — результат
                         и сроки.
@@ -335,10 +423,9 @@
                         <div class="works_previews">
                             <img src="img/works1.jpg" alt="">
                             <div class="works_previews__active">
-                              <div class="works_previews-text">
-                                  <p>Создание landing-page</p>
-                                  <p>135$</p>
-                              </div>
+                                <div class="works_previews-text">
+                                    <p>Создание landing-page</p>
+                                </div>
                                 <div class="btn">
                                     <a href="">Подробнее</a>
                                 </div>
@@ -349,10 +436,9 @@
                         <div class="works_previews">
                             <img src="img/works2.jpg" alt="">
                             <div class="works_previews__active">
-                              <div class="works_previews-text">
-                                  <p>Создание интернет-магазина</p>
-                                  <p>от 135$</p>
-                              </div>
+                                <div class="works_previews-text">
+                                    <p>Создание интернет-магазина</p>
+                                </div>
                                 <div class="btn">
                                     <a href="">Подробнее</a>
                                 </div>
@@ -363,10 +449,10 @@
                         <div class="works_previews">
                             <img src="img/works3.jpg" alt="">
                             <div class="works_previews__active">
-                              <div class="works_previews-text">
-                                  <p>Создание каталога</p>
-                                  <p>от 135$</p>
-                              </div>
+                                <div class="works_previews-text">
+                                    <p>Создание каталога</p>
+                                    <p>от 135$</p>
+                                </div>
                                 <div class="btn">
                                     <a href="">Посмотреть проект</a>
                                 </div>
@@ -380,10 +466,10 @@
                         <div class="works_previews">
                             <img src="img/works1.jpg" alt="">
                             <div class="works_previews__active">
-                              <div class="works_previews-text">
-                                  <p>Создание landing-page</p>
-                                  <p>135$</p>
-                              </div>
+                                <div class="works_previews-text">
+                                    <p>Создание landing-page</p>
+                                    <p>135$</p>
+                                </div>
                                 <div class="btn">
                                     <a href="">Подробнее</a>
                                 </div>
@@ -394,10 +480,10 @@
                         <div class="works_previews">
                             <img src="img/works2.jpg" alt="">
                             <div class="works_previews__active">
-                              <div class="works_previews-text">
-                                  <p>Создание landing-page</p>
-                                  <p>135$</p>
-                              </div>
+                                <div class="works_previews-text">
+                                    <p>Создание landing-page</p>
+                                    <p>135$</p>
+                                </div>
                                 <div class="btn">
                                     <a href="">Подробнее</a>
                                 </div>
@@ -408,10 +494,10 @@
                         <div class="works_previews">
                             <img src="img/works3.jpg" alt="">
                             <div class="works_previews__active">
-                              <div class="works_previews-text">
-                                  <p>Создание landing-page</p>
-                                  <p>135$</p>
-                              </div>
+                                <div class="works_previews-text">
+                                    <p>Создание landing-page</p>
+                                    <p>135$</p>
+                                </div>
                                 <div class="btn">
                                     <a href="">Подробнее</a>
                                 </div>
@@ -423,24 +509,10 @@
                         <div class="works_previews">
                             <img src="img/works3.jpg" alt="">
                             <div class="works_previews__active">
-                              <div class="works_previews-text">
-                                  <p>Создание landing-page для компании "Название"</p>
-                                  <p>135$</p>
-                              </div>
-                                <div class="btn">
-                                    <a href="">Подробнее</a>
+                                <div class="works_previews-text">
+                                    <p>Создание landing-page для компании "Название"</p>
+                                    <p>135$</p>
                                 </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="works_previews">
-                            <img src="img/works3.jpg" alt="">
-                            <div class="works_previews__active">
-                              <div class="works_previews-text">
-                                  <p>Создание landing-page для компании "Название"</p>
-                                  <p>135$</p>
-                              </div>
                                 <div class="btn">
                                     <a href="">Подробнее</a>
                                 </div>
@@ -456,7 +528,7 @@
                                     <p>135$</p>
                                 </div>
                                 <div class="btn">
-                                    <a href="">Посмотреть проект</a>
+                                    <a href="">Подробнее</a>
                                 </div>
                             </div>
                         </div>
@@ -465,8 +537,10 @@
                         <div class="works_previews">
                             <img src="img/works3.jpg" alt="">
                             <div class="works_previews__active">
-                                <p>Создание landing-page для компании "Название"</p>
-                                <p>135$</p>
+                                <div class="works_previews-text">
+                                    <p>Создание landing-page для компании "Название"</p>
+                                    <p>135$</p>
+                                </div>
                                 <div class="btn">
                                     <a href="">Посмотреть проект</a>
                                 </div>
@@ -492,7 +566,7 @@
                     <a href="tel:+375297066767">+375 29 <span>706 67 67</span></a>
                 </div>
                 <div class="email contacts_col">
-                    <a href="mailto: info@starmedia.by">info@starmedia.by</a>
+                    <a href="mailto: info@company.by">info@company.by</a>
                 </div>
                 <div class="address contacts_col">
                     <p>г. Минск, ул. Азгура 1, 5H</p>
@@ -519,6 +593,11 @@
 
     <script src="js/works.js"></script>
     <script src="js/close_menu.js"></script>
+
+    <!--Slider script-->
+    <script src="js/slider.js"></script>
+
+    <script src="js/video.js"></script>
 
     <script>
         if (window.screen.width > 800) {
