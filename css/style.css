@@ -5820,6 +5820,9 @@ button.close {
     display: none !important; } }
 
 /*-------------------------------------------
+#########      Переменные      ###############
+---------------------------------------------*/
+/*-------------------------------------------
 #########      Миксины шрифтов ###############
 ---------------------------------------------*/
 /*-------------------------------------------
@@ -5961,7 +5964,7 @@ border-bottom: solid red;*/ }
       padding: 5% 5px;
       position: relative; }
       .navigation-menu ul li a {
-        color: #31353e;
+        color: #4F4D4E;
         text-decoration: none; }
       .navigation-menu ul li::after {
         content: "";
@@ -5989,7 +5992,6 @@ border-bottom: solid red;*/ }
   min-width: 210px;
   text-align: center; }
   .contacts a {
-    color: #4F4D4E;
     margin-top: 10px;
     display: block;
     min-width: 140px;
@@ -6025,13 +6027,13 @@ border-bottom: solid red;*/ }
     font-family: "Lato Light", "Arial", sans-serif;
     font-weight: 300;
     font-size: 2.5rem;
-    color: #ffffff;
+    color: #fff;
     line-height: 2.8rem; }
     .title h1 span {
       font-family: "Lato Bold", "Arial", sans-serif;
       font-weight: bold;
       font-size: 2.5rem;
-      color: #ffffff;
+      color: #fff;
       line-height: 2.8rem; }
   .title::after {
     content: "";
@@ -6040,7 +6042,7 @@ border-bottom: solid red;*/ }
     bottom: -20px;
     width: 61px;
     height: 1px;
-    background-color: #ffffff; }
+    background-color: #fff; }
 
 .main-page {
   text-align: center;
@@ -6058,7 +6060,7 @@ border-bottom: solid red;*/ }
   box-shadow: 0 6px 10px 0 rgba(76, 172, 194, 0.3); }
   .main-page p {
     font-family: "Lato Regular", "Arial", sans-serif;
-    color: #ffffff;
+    color: #fff;
     font-size: 1.5rem;
     position: relative;
     float: left;
@@ -6125,7 +6127,7 @@ Video
         text-transform: uppercase;
         background-color: transparent;
         border: none;
-        color: #fff;
+        color: $colorMainPageFont;
     }
   }
 }*/
@@ -6138,7 +6140,7 @@ End video
   max-width: 200px;
   margin-top: 40px; }
   .main-btn a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none; }
 
 .undertitle {
@@ -6217,7 +6219,7 @@ End video
         object-position: center; }
       .service-grid ul li .service-grid_item__active {
         position: absolute;
-        background-color: #ffffff;
+        background-color: #fff;
         top: 5%;
         left: 5%;
         width: 0;
@@ -6330,7 +6332,7 @@ End video
     position: absolute;
     bottom: 0;
     width: 120%;
-    border-bottom: 1px solid #A3A2A2; }
+    border-bottom: 1px solid #E0E2E2; }
 
 /*-------------------------------------------
 #########         Service page        ##########
@@ -6601,7 +6603,7 @@ End video
           position: absolute;
           width: 100%;
           height: 100%;
-          background-color: rgba(55, 65, 69, 0.3);
+          background-color: rgba(55, 55, 69, 0.2);
           z-index: 2;
           top: 0;
           left: 0; }
@@ -6643,14 +6645,9 @@ End video
         left: 25%;
         min-width: 150px; }
         .works_previews ul li .btn a {
-          color: #fff;
+          color: #ffffff;
           text-decoration: none; }
       .works_previews ul li .works_previews-text {
-        font-family: "Lato Bold", "Arial", sans-serif;
-        font-weight: bold;
-        font-size: 1rem;
-        color: #fff;
-        line-height: 1.3rem;
         text-shadow: grey;
         position: absolute;
         display: inline-block;
@@ -6669,15 +6666,15 @@ End video
       position: relative; }
       .works_previews ul li:hover .works_previews .works_previews__active::before {
         width: 100%;
-        border-left: 1px solid #fff;
-        border-right: 1px solid #fff; }
+        border-left: 1px solid #ffffff;
+        border-right: 1px solid #ffffff; }
       .works_previews ul li:hover .works_previews .works_previews__active::after {
         height: 100%;
         -webkit-transform: scaleY(1);
         -ms-transform: scaleY(1);
         transform: scaleY(1);
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff; }
+        border-top: 1px solid #ffffff;
+        border-bottom: 1px solid #ffffff; }
       .works_previews ul li:hover .works_previews .works_previews__active .btn {
         visibility: visible;
         position: absolute;
@@ -6713,11 +6710,11 @@ End video
   padding-top: 16px; }
   .footer p {
     font-family: "Lato Regular", "Arial", sans-serif;
-    color: #ffffff;
+    color: #fff;
     font-size: 1.9rem;
     padding-left: 5%; }
   .footer .contacts {
-    color: #ffffff;
+    color: #fff;
     position: relative;
     min-height: 1px;
     padding-left: 15px;
@@ -6756,15 +6753,15 @@ End video
       font-family: "Lato Bold", "Arial", sans-serif;
       font-weight: bold;
       font-size: 1.1rem;
-      color: #ffffff;
+      color: #fff;
       line-height: 1.4rem; }
       .footer .contacts a span {
         font-family: "Lato Regular", "Arial", sans-serif;
-        color: #ffffff;
+        color: #fff;
         font-size: 1.1rem; }
     .footer .contacts p {
       font-family: "Lato Regular", "Arial", sans-serif;
-      color: #ffffff;
+      color: #fff;
       font-size: 1.1rem;
       margin-top: 10px;
       padding-left: 0; }
@@ -6802,7 +6799,7 @@ End video
         transition: border-right-width 0.1s, border-bottom-width 0.1s 0.1s, border-left-width 0.1s 0.2s, border-top-width 0.1s 0.3s; }
         .footer .social ul li:hover {
           border-right-width: 1px;
-          border-color: cyan;
+          border-color: #295D66;
           border-bottom-width: 0;
           border-left-width: 0;
           border-top-width: 0; }
@@ -6928,7 +6925,7 @@ End video
       opacity: 1;
       position: absolute;
       right: 0;
-      top: 10%;
+      top: 15%;
       background-color: #fff;
       z-index: 5;
       border-radius: 20px;

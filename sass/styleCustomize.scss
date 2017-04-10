@@ -1,0 +1,92 @@
+
+
+.customize-btn {
+  position: fixed;
+  z-index: 1060;
+  display: block;
+  width: 50px;
+  height: 50px;
+  left: 0;
+  cursor: pointer;
+  background: rgba(55, 55, 55, 0.5);
+
+  transition: 0.25s;
+
+  span {
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 28px;
+      margin-bottom: -2px;
+      left: 11px;
+      top: 10px;
+      background: lightgrey;
+      border-radius: 9px;
+      opacity: 1;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+  }
+
+  span:nth-child(1) {
+      top: 11px;
+  }
+
+  span:nth-child(2) {
+      top: 23px;
+  }
+
+  span:nth-child(3) {
+      top: 35px;
+  }
+
+
+  &.active span:nth-child(1) {
+      top: 20px;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg);
+  }
+
+  &.active span:nth-child(2) {
+      opacity: 0;
+      right: -60px;
+  }
+
+  &.active span:nth-child(3) {
+      top: 20px;
+      -webkit-transform: rotate(-135deg);
+      -moz-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+  }
+
+  &.active
+  {
+    left: 250px;
+    top: 0;
+  }
+}
+
+
+.customize-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1050;
+  display: block;
+  width: 0;
+  transition: 0.25s;
+  background-color: lightgrey;
+}
+
+.customize-btn.active + .customize-panel {
+  width: 300px;
+}

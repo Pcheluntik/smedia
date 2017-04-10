@@ -1,20 +1,45 @@
 @import "../assets/stylesheets/_bootstrap.scss";
+
+/*-------------------------------------------
+#########      Переменные      ###############
+---------------------------------------------*/
+
+$colorBackground: #fff; //цвет общего фона
+
+$colorBorder: #4CACC2; //бордеры на кнопках, подчеркивание в навигации
+$colorBorderHover: #295D66;  //цвет бордера кнопки при наведении
+$colorBackgroundBtnHover: rgba(55,55,69,0.2);  //цвет заливки кнопки при наведении
+
+$colorFooter: #4CACC2; //цвет background футера
+$colorFooterFont: #fff; //цвет шрифта футера
+
+$colorMainPageFont:  #fff; //цвет текста на первом экране
+
+$colorFont: #4F4D4E; //цвет основного шрифта
+
+$colorShadow: rgba(76, 172, 194, 0.3); // тень от главной страницы
+
+$colorGrid: #E0E2E2; //цвет сетки на услугах
+
+$colorWorks: #ffffff; //цвет тектста и бордера на работах
+
+$colorWorksBackgroundHover: rgba(55, 65, 69, 0.7);
 /*-------------------------------------------
 #########      Миксины шрифтов ###############
 ---------------------------------------------*/
-@mixin regularText($fontRegularSize: 1.25rem, $colorRegularFont: #4F4D4E ) {
+@mixin regularText($fontRegularSize: 1.25rem, $colorRegularFont: $colorFont ) {
     font-family: "Lato Regular", "Arial", sans-serif;
     color: #{$colorRegularFont};
     font-size: #{$fontRegularSize};
 }
-@mixin boldText($fontBoldSize: 1rem, $colorBoldFont: #4F4D4E) {
+@mixin boldText($fontBoldSize: 1rem, $colorBoldFont: $colorFont) {
     font-family: "Lato Bold", "Arial", sans-serif;
     font-weight: bold;
     font-size: #{$fontBoldSize};
     color: #{$colorBoldFont};
     line-height: $fontBoldSize + 0.3rem;
 }
-@mixin lightText($fontLightSize: 1rem, $colorLightFont: #4F4D4E) {
+@mixin lightText($fontLightSize: 1rem, $colorLightFont: $colorFont) {
     font-family: "Lato Light", "Arial", sans-serif;
     font-weight: 300;
     font-size: #{$fontLightSize};
@@ -37,7 +62,7 @@ html {
 
 body {
     font-family: "Lato", sans-serif;
-    background-color: #fff;
+    background-color: $colorBackground;
     @include lightText();
 }
 
@@ -63,7 +88,7 @@ p {
 }
 
 .btn {
-    border: 2px solid #4CACC2;
+    border: 2px solid $colorBorder;
     border-bottom: none;
     border-radius: 0;
     font-weight: 500;
@@ -78,7 +103,7 @@ p {
         height: 2px;
         bottom: 0;
         left: 0;
-        border-top: 2px solid #4CACC2;
+        border-top: 2px solid $colorBorder;
         transition: width 0.25s;
     }
 
@@ -103,12 +128,12 @@ p {
     /*border-bottom-width: 2px;
 border-bottom: solid red;*/
     &::before {
-        border-top: 2px solid #295D66;
-        border-bottom: 2px solid #295D66;
-        border-left: 2px solid #295D66;
+        border-top: 2px solid $colorBorderHover;
+        border-bottom: 2px solid $colorBorderHover;
+        border-left: 2px solid $colorBorderHover;
         width: 103%;
-        border-right: 2px solid #295D66;
-        background-color: rgba(55,55,69,0.2);
+        border-right: 2px solid $colorBorderHover;
+        background-color: $colorBackgroundBtnHover;
     }
 }
 /*-------------------------------------------
@@ -142,14 +167,14 @@ border-bottom: solid red;*/
             position: relative;
 
             a {
-                color: #31353e;
+                color: $colorFont;
                 text-decoration: none;
             }
 
             &::after {
                 content: "";
                 position: absolute;
-                border-bottom: 2px solid #4CACC2;
+                border-bottom: 2px solid $colorBorder;
                 opacity: 0;
                 transition: 0.3s;
                 width: 0;
@@ -162,7 +187,7 @@ border-bottom: solid red;*/
         }
 
         li:hover::after {
-            border-bottom: 2px solid #4CACC2;
+            border-bottom: 2px solid $colorBorder;
             width: 90%;
             opacity: 1;
         }
@@ -176,7 +201,7 @@ border-bottom: solid red;*/
     text-align: center;
 
     a {
-        color: #4F4D4E;
+
         margin-top: 10px;
         display: block;
         min-width: 140px;
@@ -201,10 +226,10 @@ border-bottom: solid red;*/
     cursor: default;
 
     h1 {
-        @include lightText($fontLightSize: 2.5rem, $colorLightFont: #ffffff);
+        @include lightText($fontLightSize: 2.5rem, $colorLightFont: $colorMainPageFont);
 
         span {
-            @include boldText($fontBoldSize: 2.5rem, $colorBoldFont: #ffffff );
+            @include boldText($fontBoldSize: 2.5rem, $colorBoldFont: $colorMainPageFont);
         }
     }
 
@@ -215,7 +240,7 @@ border-bottom: solid red;*/
         bottom: -20px;
         width: 61px;
         height: 1px;
-        background-color: #ffffff;
+        background-color: $colorMainPageFont;
     }
 }
 
@@ -232,10 +257,10 @@ border-bottom: solid red;*/
     background-position: center;*/
     /*Удалить если он не нужен*/
     padding-bottom: 60px;
-    box-shadow: 0 6px 10px 0 rgba(76, 172, 194, 0.3);
+    box-shadow: 0 6px 10px 0 $colorShadow;
 
     p {
-        @include regularText($fontRegularSize: 1.5rem, $colorRegularFont: #ffffff);
+        @include regularText($fontRegularSize: 1.5rem, $colorRegularFont: $colorMainPageFont);
         @include make-xs-column(6);
         float: none;
         margin-top: 40px;
@@ -310,7 +335,7 @@ Video
         text-transform: uppercase;
         background-color: transparent;
         border: none;
-        color: #fff;
+        color: $colorMainPageFont;
     }
   }
 }*/
@@ -325,7 +350,7 @@ End video
     margin-top: 40px;
 
     a {
-        color: #ffffff;
+        color: $colorMainPageFont;
         text-decoration: none;
     }
 }
@@ -348,7 +373,7 @@ End video
             bottom: -10px;
             width: 61px;
             height: 1px;
-            background-color: #4F4D4E;
+            background-color: $colorFont;
         }
     }
 
@@ -376,7 +401,7 @@ End video
             padding: 20px;
             height: 112px;
             text-align: center;
-            border: 1px solid #E0E2E2;
+            border: 1px solid $colorGrid;
             margin-right: -1px;
             margin-bottom: -1px;
             position: relative;
@@ -390,7 +415,7 @@ End video
 
             .service-grid_item__active {
                 position: absolute;
-                background-color: #ffffff;
+                background-color: $colorBackground;
                 top: 5%;
                 left: 5%;
                 width: 0;
@@ -400,8 +425,8 @@ End video
                 z-index: 3;
                 transition: 0.5s;
                 text-align: center;
-                border: 1px solid #4CACC2;
-                color: #4CACC2;
+                border: 1px solid $colorBorder;
+                color: $colorBorder;
                 padding: 10% 7%;
 
                 &::before {
@@ -409,7 +434,7 @@ End video
                     content: "";
                     width: 40%;
                     height: 1px;
-                    background-color: #E0E2E2;
+                    background-color: $colorGrid;
                     top: 10px;
                     left: 30%;
                 }
@@ -419,7 +444,7 @@ End video
                     content: "";
                     width: 40%;
                     height: 1px;
-                    background-color: #E0E2E2;
+                    background-color: $colorGrid;
                     bottom: 10px;
                     left: 30%;
                 }
@@ -505,7 +530,7 @@ End video
         position: absolute;
         bottom: 0;
         width: 120%;
-        border-bottom: 1px solid #A3A2A2;
+        border-bottom: 1px solid $colorGrid;
     }
 }
 /*-------------------------------------------
@@ -526,7 +551,7 @@ End video
                 text-align: center;
                 padding: 20px;
                 height: 220px;
-                border: 2px solid #4CACC2;
+                border: 2px solid $colorBorder;
                 min-width: 200px;
                 max-width: 400px;
                 margin: 0 auto;
@@ -707,7 +732,7 @@ End video
             @include make-xs-column(4);
 
             p:first-of-type {
-                @include boldText($fontBoldSize: 3.3rem, $colorBoldFont: #4CACC2);
+                @include boldText($fontBoldSize: 3.3rem, $colorBoldFont: $colorBorder);
             }
 
             p {
@@ -734,7 +759,7 @@ End video
             @include make-sm-column(4);
             max-width: 400px;
             padding: 2%;
-            color: #ffffff;
+            color: $colorWorks;
 
             .works_previews {
                 width: 100%;
@@ -747,7 +772,7 @@ End video
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    background-color: rgba(55, 65, 69, 0.3);
+                    background-color: $colorBackgroundBtnHover;
                     z-index: 2;
                     top: 0;
                     left: 0;
@@ -795,13 +820,12 @@ End video
                 min-width: 150px;
 
                 a {
-                    color: #fff;
+                    color: $colorWorks;
                     text-decoration: none;
                 }
             }
 
             .works_previews-text {
-                @include boldText($colorBoldFont: #fff);
                 text-shadow: grey;
                 position: absolute;
                 display: inline-block;
@@ -828,15 +852,15 @@ End video
                 .works_previews__active {
                     &::before {
                         width: 100%;
-                        border-left: 1px solid #fff;
-                        border-right: 1px solid #fff;
+                        border-left: 1px solid $colorWorks;
+                        border-right: 1px solid $colorWorks;
                     }
 
                     &::after {
                         height: 100%;
                         transform: scaleY(1);
-                        border-top: 1px solid #fff;
-                        border-bottom: 1px solid #fff;
+                        border-top: 1px solid $colorWorks;
+                        border-bottom: 1px solid $colorWorks;
                     }
 
                     .btn {
@@ -848,7 +872,7 @@ End video
                 }
 
                 &::before {
-                    background-color: rgba(55, 65, 69, 0.7);
+                    background-color: $colorWorksBackgroundHover;
                 }
             }
         }
@@ -879,17 +903,17 @@ End video
 #########         Footer       ##########
 ---------------------------------------------*/
 .footer {
-    background-color: #4CACC2;
+    background-color: $colorFooter;
     padding-bottom: 58px;
     padding-top: 16px;
 
     p {
-        @include regularText($fontRegularSize: 1.9rem, $colorRegularFont: #ffffff);
+        @include regularText($fontRegularSize: 1.9rem, $colorRegularFont: $colorFooterFont);
         padding-left: 5%;
     }
 
     .contacts {
-        color: #ffffff;
+        color: $colorFooterFont;
         @include make-sm-column(8);
         @include make-xs-column(12);
         padding-left: 5%;
@@ -904,15 +928,15 @@ End video
         }
 
         a {
-            @include boldText($fontBoldSize: 1.1rem, $colorBoldFont: #ffffff);
+            @include boldText($fontBoldSize: 1.1rem, $colorBoldFont: $colorFooterFont);
 
             span {
-                @include regularText($fontRegularSize: 1.1rem, $colorRegularFont: #ffffff);
+                @include regularText($fontRegularSize: 1.1rem, $colorRegularFont: $colorFooterFont);
             }
         }
 
         p {
-            @include regularText($fontRegularSize: 1.1rem, $colorRegularFont: #ffffff);
+            @include regularText($fontRegularSize: 1.1rem, $colorRegularFont: $colorFooterFont);
             margin-top: 10px;
             padding-left: 0;
         }
@@ -937,7 +961,7 @@ End video
                 height: 70px;
                 border-radius: 50%;
                 margin-right: 22px;
-                border: 2px solid #fff;
+                border: 2px solid $colorFooterFont;
                 background-repeat: no-repeat;
                 background-position: center;
                 border-right-width: 0;
@@ -945,7 +969,7 @@ End video
 
                 &:hover {
                     border-right-width: 1px;
-                    border-color: cyan;
+                    border-color: $colorBorderHover;
                     border-bottom-width: 0;
                     border-left-width: 0;
                     border-top-width: 0;
@@ -1122,8 +1146,8 @@ End video
                 opacity: 1;
                 position: absolute;
                 right: 0;
-                top: 10%;
-                background-color: #fff;
+                top: 15%;
+                background-color: $colorBackground;
                 z-index: 5;
                 border-radius: 20px;
                 padding: 10px;
@@ -1195,6 +1219,8 @@ End video
 
     .reason {
         background-image: radial-gradient(#e5edfc, #a7b8d6);
+
+        //если в причинах другая картинка то ставим на фон ее
         background-color: lightgrey;
     }
 }
