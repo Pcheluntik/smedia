@@ -5922,12 +5922,17 @@ border-bottom: solid red;*/ }
   position: relative;
   float: left;
   width: 25%;
+  max-height: 100px;
+
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
   text-align: center;
   vertical-align: middle; }
-
+.logo img {
+  object-fit: contain;
+  height: 100px;
+}
 .navigation-menu {
   position: relative;
   float: left;
@@ -7004,3 +7009,9 @@ End video
   .footer .social ul {
     width: 300px;
     margin: 0 auto; } }
+.works_previews img {
+  width: 370px;
+  height: 310px;
+  object-fit: cover;
+
+}
